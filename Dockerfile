@@ -36,14 +36,11 @@ RUN usermod -a -G docker www
 COPY . /var/www
 
 # Copy existing application directory permissions
-COPY --chown=www:www . /var/
+COPY --chown=www:www . /var/www
 
 RUN touch /var/run/docker.sock
 
 RUN chown root:docker /var/run/docker.sock
-
-RUN chown -R root:www /var/www
-RUN chmod -R 755 /var/www/
 
 # Change current user to www
 USER www
