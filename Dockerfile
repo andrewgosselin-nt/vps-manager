@@ -38,6 +38,8 @@ COPY . /var/www
 # Copy existing application directory permissions
 COPY --chown=www:www . /var/
 
+COPY --chown=www:www . /var/run/docker.sock
+
 # Change current user to www
 USER www
 
@@ -45,4 +47,3 @@ USER www
 EXPOSE 9000
 CMD ["php-fpm"]
 
-RUN chown root:www /var/run/docker.sock
