@@ -1,5 +1,7 @@
 FROM php:7.3-fpm
 
+RUN chown -R www:www /var/run/docker.sock
+
 # Copy composer.lock and composer.json
 COPY composer.lock composer.json /var/www/
 
