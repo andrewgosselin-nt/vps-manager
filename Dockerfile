@@ -1,7 +1,5 @@
 FROM php:7.3-fpm
 
-RUN chown -R www:www /var/run/docker.sock
-
 # Copy composer.lock and composer.json
 COPY composer.lock composer.json /var/www/
 
@@ -37,6 +35,8 @@ COPY . /var/www
 
 # Copy existing application directory permissions
 COPY --chown=www:www . /var/
+
+RUN chown -R www:www /var/run/docker.sock
 
 # Change current user to www
 USER www
