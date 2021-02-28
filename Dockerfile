@@ -32,6 +32,8 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 
 RUN usermod -a -G docker www
 
+RUN chown root:docker /var/run/docker.sock
+
 # Copy existing application directory contents
 COPY . /var/www
 
