@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    dd(\App\Models\Docker\Manager::version());
     return view('welcome');
 });
