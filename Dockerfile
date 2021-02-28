@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
     git \
     unzip \
     zip \
-    curl
+    curl \
+    docker.io
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
