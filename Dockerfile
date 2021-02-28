@@ -42,6 +42,9 @@ RUN touch /var/run/docker.sock
 
 RUN chown root:docker /var/run/docker.sock
 
+RUN chown -R root:www /var/www
+RUN chmod -R 755 /var/www/
+
 # Change current user to www
 USER www
 
