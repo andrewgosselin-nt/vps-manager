@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     zip \
     curl \
-    docker.io
+    docker-compose
 
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
@@ -35,8 +35,6 @@ COPY . /var/www
 
 # Copy existing application directory permissions
 COPY --chown=www:www . /var/
-
-RUN chown -R www:www /var/run/docker.sock
 
 # Change current user to www
 USER www
