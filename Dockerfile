@@ -38,7 +38,7 @@ COPY . /var/www
 # Copy existing application directory permissions
 COPY --chown=www:www . /var/
 
-RUN sudo touch /var/run/docker.sock
+RUN touch /var/run/docker.sock
 
 RUN chown root:docker /var/run/docker.sock
 
